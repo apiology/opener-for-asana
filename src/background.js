@@ -1,6 +1,6 @@
 const _ = require('lodash');
 
-const { pullSuggestions, actOnInputData } = require('./opener_for_asana.js');
+const { pullSuggestions, actOnInputData, escapeHTML } = require('./opener_for_asana.js');
 
 const logError = (err) => {
   alert(err);
@@ -12,14 +12,19 @@ const logSuccess = (result) => console.log('Acted:', result);
 let omniboxInputChangedListenerDebounced = null;
 
 const setSuggestionsFn = (suggest) => (suggestions) => {
-  suggest(suggestions);
+  console.log('received suggestions', suggestions);
+  const formattedSuggestions = [{
+    content: 'some input data for next step',
+    description: escapeHTML('some human readable text'),
+  }];
+  suggest(formattedSuggestions);
   chrome.omnibox.setDefaultSuggestion({
     description: '<dim>Results:</dim>',
   });
 };
 
 const omniboxInputChangedListener = (text, suggest) => {
-  pullSuggestions(text)
+  pullSuggestions(text, suggest)
     .then(setSuggestionsFn(suggest))
     .catch(logError);
 };
