@@ -1,7 +1,5 @@
 # Opener for Asana
 
-WARNING: This is not ready for use yet!
-
 Searches for and opens an Asana task in the Chrome Omnibox
 
 ## Usage

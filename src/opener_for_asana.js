@@ -71,7 +71,7 @@ const pullSuggestions = (text, suggest) => {
 const actOnInputData = (text) => {
   console.log(`Acting upon ${text}`);
   // https://stackoverflow.com/questions/16503879/chrome-extension-how-to-open-a-link-in-new-tab
-  const newURL = 'http://stackoverflow.com/';
+  const newURL = `https://app.asana.com/0/0/${text}`;
   chrome.tabs.create({ url: newURL });
 };
 

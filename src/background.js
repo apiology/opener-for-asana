@@ -11,12 +11,13 @@ const logSuccess = (result) => console.log('Acted:', result);
 
 let omniboxInputChangedListenerDebounced = null;
 
-const setSuggestionsFn = (suggest) => (suggestions) => {
-  console.log('received suggestions', suggestions);
-  const formattedSuggestions = [{
-    content: 'some input data for next step',
-    description: escapeHTML('some human readable text'),
-  }];
+const setSuggestions = ({ typeaheadResult, suggest }) => {
+  console.log('received suggestions', typeaheadResult);
+  const formattedSuggestions = typeaheadResult.data
+    .map((task) => ({
+      content: task.gid,
+      description: escapeHTML(task.name),
+    }));
   suggest(formattedSuggestions);
   chrome.omnibox.setDefaultSuggestion({
     description: '<dim>Results:</dim>',
@@ -25,7 +26,7 @@ const setSuggestionsFn = (suggest) => (suggestions) => {
 
 const omniboxInputChangedListener = (text, suggest) => {
   pullSuggestions(text, suggest)
-    .then(setSuggestionsFn(suggest))
+    .then(setSuggestions)
     .catch(logError);
 };
 
