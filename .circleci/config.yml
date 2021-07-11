@@ -95,7 +95,6 @@ commands:
 
 jobs:
   overcommit:
-    working_directory: ~/opener_for_asana
     docker:
       - image: apiology/circleci:latest
     steps:
@@ -105,7 +104,6 @@ jobs:
       #          command: make test
       - overcommit
   build:
-    working_directory: ~/opener_for_asana
     docker:
       - image: apiology/circleci:latest
     steps:
