@@ -56,6 +56,7 @@ commands:
       - run:
           name: Verify package-lock.json
           command: |
+            npm --version
             if ! git diff --exit-code package-lock.json
             then
               >&2 echo "Please resolve changes to package-lock.json after npm install to avoid caching difficulties"
