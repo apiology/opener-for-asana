@@ -48,7 +48,10 @@ ensure_npm() {
 }
 
 ensure_npm_modules() {
+  set -x
+  npm --version
   npm install
+  set +x
 }
 
 apt_upgraded=0
