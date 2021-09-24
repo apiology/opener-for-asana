@@ -1,6 +1,6 @@
 const _ = require('lodash');
 
-const { pullSuggestions, actOnInputData, escapeHTML } = require('./opener_for_asana.js');
+const { pullSuggestions, actOnInputData, escapeHTML } = require('./opener_for_asana');
 
 const logError = (err) => {
   alert(err);
