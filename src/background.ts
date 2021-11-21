@@ -2,9 +2,8 @@
 
 import * as _ from 'lodash';
 import { SuggestFunction } from './chrome-types';
-
-import { actOnInputData, logSuccess, pullOmniboxSuggestions } from './opener_for_asana';
 import { logError } from './error';
+import { actOnInputData, logSuccess, pullOmniboxSuggestions } from './opener_for_asana';
 
 const populateOmnibox = async (text: string, suggest: SuggestFunction) => {
   const suggestions = await pullOmniboxSuggestions(text);
