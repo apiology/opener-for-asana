@@ -1,3 +1,9 @@
+/**
+ * opener_for_asana module.
+ *
+ * Searches for and opens an Asana task in the Chrome Omnibox
+ */
+
 import * as Asana from 'asana';
 import { formatTask, pullResult } from './asana-typeahead';
 
