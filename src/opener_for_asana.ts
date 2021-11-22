@@ -1,3 +1,9 @@
+/**
+ * opener_for_asana module.
+ *
+ * Searches for and opens an Asana task in the Chrome Omnibox
+ */
+
 import { escapeHTML } from './omnibox';
 
 export const logSuccess = (result: string | object): void => console.log('Upvoted task:', result);
