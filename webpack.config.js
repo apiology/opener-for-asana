@@ -6,7 +6,7 @@ const webpack = require('webpack'); // eslint-disable-line @typescript-eslint/no
 
 module.exports = {
   entry: {
-    background: ['./src/background.ts', './src/opener_for_asana.ts'],
+    background: ['./src/background.ts', './src/opener-for-asana.ts'],
   },
   // https://webpack.js.org/guides/typescript/
   module: {
