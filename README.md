@@ -1,6 +1,6 @@
 # Opener for Asana
 
-[![CircleCI](https://circleci.com/gh/apiology/opener_for_asana.svg?style=svg)](https://circleci.com/gh/apiology/opener_for_asana)
+[![CircleCI](https://circleci.com/gh/apiology/opener-for-asana.svg?style=svg)](https://circleci.com/gh/apiology/opener_for_asana)
 
 Searches for and opens an Asana task in the Chrome Omnibox
 

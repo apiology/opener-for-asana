@@ -10,7 +10,7 @@
 import * as _ from 'lodash';
 import {
   actOnInputData, logSuccess, pullOmniboxSuggestions,
-} from './opener_for_asana';
+} from './opener-for-asana';
 import { logError as logErrorOrig } from './error';
 
 // As of 4.4.4, TypeScript's control flow analysis is wonky with
