@@ -9,5 +9,8 @@
     "project_short_description": "Searches for and opens an Asana task in the Chrome Omnibox",
     "project_slug": "opener-for-asana",
     "type_of_github_repo": "public",
-    "version": "0.1.0"
+    "version": "0.1.0",
+    "asana_related": "yes",
+    "asana_api": "yes",
+    "chrome_extension_options": "yes"
 }
