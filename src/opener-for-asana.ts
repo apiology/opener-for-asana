@@ -1,5 +1,5 @@
 /**
- * opener_for_asana module.
+ * opener-for-asana module.
  *
  * Searches for and opens an Asana task in the Chrome Omnibox
  */

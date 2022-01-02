@@ -1,5 +1,8 @@
 {
     "_template": "https://github.com/apiology/cookiecutter-multicli",
+    "asana_api": "yes",
+    "asana_related": "yes",
+    "chrome_extension_options": "yes",
     "email": "vince@broz.cc",
     "full_name": "Vince Broz",
     "github_username": "apiology",
@@ -7,7 +10,7 @@
     "open_source_license": "MIT license",
     "project_name": "Opener for Asana",
     "project_short_description": "Searches for and opens an Asana task in the Chrome Omnibox",
-    "project_slug": "opener_for_asana",
+    "project_slug": "opener-for-asana",
     "type_of_github_repo": "public",
     "version": "0.1.0"
 }
