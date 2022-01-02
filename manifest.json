@@ -3,7 +3,6 @@
   "description": "Searches for and opens an Asana task in the Chrome Omnibox",
   "version": "0.1.0",
   "permissions": [
-    "activeTab"
   ],
   "omnibox": { "keyword": "a" },
   "background": {
