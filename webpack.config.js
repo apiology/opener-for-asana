@@ -3,10 +3,12 @@
 //
 // SyntaxError: Cannot use import statement outside a module
 const webpack = require('webpack'); // eslint-disable-line @typescript-eslint/no-var-requires
+const CopyPlugin = require('copy-webpack-plugin'); // eslint-disable-line @typescript-eslint/no-var-requires
 
 module.exports = {
   entry: {
     background: ['./src/background.ts', './src/opener-for-asana.ts'],
+    options: ['./src/options.ts'],
   },
   // https://webpack.js.org/guides/typescript/
   module: {
@@ -63,6 +65,9 @@ module.exports = {
       process: {
         env: '{}',
       },
+    }),
+    new CopyPlugin({
+      patterns: [{ from: 'static' }],
     }),
   ],
 };
