@@ -16,7 +16,7 @@ Pick one, and your task will be opened in a new tab!
    [Asana](https://app.asana.com/0/my-apps)
 1. Set up options directly
    [here](chrome-extension://TBD/options.html)
-   or in Chrome | … | More Tools | Extensions | Upvoter for Asana |
+   or in Chrome | … | More Tools | Extensions | Opener for Asana |
    Details | Extension options.
 1. Paste in your personal access token.
 1. Provide the rest of the configuration and hit 'Save'
