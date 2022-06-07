@@ -16,9 +16,28 @@ quality checks.  `bundle exec overcommit --install` will install it.
 This project uses direnv to manage environment variables used during
 development.  See the `.envrc` file for detail.
 
+## Interactive development with Asana API
+
+1. Save off the configured Asana client object in asana-base.ts#fetchClient():
+   ```TypeScript
+   const w: any = window;
+   w.savedClient = fetchedClient;
+  ```
+2. Open up Extensions | Opener for Asana
+3. Click reload icon
+4. Invoke filer on something
+5. Save off the client in the Chrome DevTools console before the background session expires:
+   ```TypeScript
+   client = savedClient;
+   ```
+6. You can now invoke the methods from [node-asana](https://github.com/Asana/node-asana/tree/master/lib/resources):
+   ```TypeScript
+   stories = await client.stories.getStoriesForTask('1234);
+   ```
+
 ## Releasing to Chrome Web Store
 
-1. Update screenshots for any new features
+1. Update screenshots in `docs/` for any new features
 1. Update [README.md](./README.md) with new screenshots
 1. PR screenshot updates in
 1. PR a bump to the version in `static/manifest.json`
