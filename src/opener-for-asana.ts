@@ -20,9 +20,9 @@ export type Suggestion = {
 }
 
 export const pullSuggestions = async (text: string): Promise<Suggestion[]> => {
-  // const description = formatTask(task);
-  const description = 'dummy';
-  (await pullResult(text)).data.map((task) => {
+  const formatter = platform().formatter();
+  return (await pullResult(text)).data.map((task) => {
+    const description = formatter.formatTask(task);
     const url = `opener-for-asana:${task.gid}`;
     return {
       url,
