@@ -4,19 +4,33 @@
  * Searches for and opens an Asana task in the Chrome Omnibox
  */
 
-import * as Asana from 'asana';
-import { formatTask, pullResult } from './asana-typeahead.js';
+// import * as Asana from 'asana';
+import { platform } from './platform.js';
+import { pullResult } from './asana-typeahead.js';
 
-export const logSuccess = (result: string | object): void => console.log('Upvoted task:', result);
+export const logSuccess = (result: string | object): void => {
+  const logger = platform().logger();
+  logger.log('Upvoted task:', result);
+};
 
-const formatTaskForTypeahead = (task: Asana.resources.Tasks.Type) => ({
-  content: task.gid,
-  description: formatTask(task),
-});
+export type Suggestion = {
+  url: string
+  text: string;
+  description: string;
+}
 
-export const pullOmniboxSuggestions = async (
-  text: string
-) => (await pullResult(text)).data.map(formatTaskForTypeahead);
+export const pullSuggestions = async (text: string): Promise<Suggestion[]> => {
+  // const description = formatTask(task);
+  const description = 'dummy';
+  (await pullResult(text)).data.map((task) => {
+    const url = `opener-for-asana:${task.gid}`;
+    return {
+      url,
+      text,
+      description,
+    };
+  });
+};
 
 export const actOnInputData = async (text: string) => {
   console.log(`Acting upon ${text}`);
