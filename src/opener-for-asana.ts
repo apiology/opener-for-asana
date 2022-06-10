@@ -5,6 +5,7 @@
  */
 
 // import * as Asana from 'asana';
+import { spawn } from 'node:child_process';
 import { platform } from './platform.js';
 import { pullResult } from './asana-typeahead.js';
 
@@ -35,7 +36,16 @@ export const pullSuggestions = async (text: string): Promise<Suggestion[]> => {
 export const actOnInputData = async (text: string) => {
   console.log(`Acting upon ${text}`);
   // https://stackoverflow.com/questions/16503879/chrome-extension-how-to-open-a-link-in-new-tab
-  const newURL = `https://app.asana.com/0/0/${text}`;
-  chrome.tabs.create({ url: newURL });
-  return `Upvoted ${newURL}`;
+
+  let parsedText = text;
+  if (text.startsWith('opener-for-asana:')) {
+    const url = new URL(text);
+    parsedText = decodeURIComponent(url.pathname);
+  }
+
+  const newURL = `https://app.asana.com/0/0/${parsedText}`;
+  spawn('open', [newURL]);
+
+  // chrome.tabs.create({ url: newURL });
+  return `Opened ${newURL}`;
 };
