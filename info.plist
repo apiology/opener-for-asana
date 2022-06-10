@@ -88,7 +88,7 @@ set -eu
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>keyword</key>
-				<string>fa</string>
+				<string>a</string>
 				<key>queuedelaycustom</key>
 				<integer>3</integer>
 				<key>queuedelayimmediatelyinitially</key>
@@ -177,9 +177,9 @@ set -eu
 	<key>variables</key>
 	<dict>
 		<key>asana_access_key</key>
-		<string></string>
+		<string>1/53283930106304:376478cc6a40513368a43fffcd57cc2a</string>
 		<key>workspace_name</key>
-		<string></string>
+		<string>VB</string>
 	</dict>
 	<key>variablesdontexport</key>
 	<array>
