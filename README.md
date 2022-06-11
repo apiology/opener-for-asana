@@ -12,6 +12,8 @@ Go to the URL bar ("Chrome Omnibox"), then type 'a', a space, then
 search for an Asana task.  You should see them pop up as suggestions.
 Pick one, and your task will be opened in a new tab!
 
+<img src="./docs/screenshot-2.png" alt="screenshot showing chrome omnibar with the 'a' keyword being entered" height="400"/>
+
 ## Using Alfred Workflow
 
 Similarly, activate Alfred, then type 'a', a space, then search for an
@@ -27,12 +29,6 @@ your task will be opened in a new tab!
 1. `npm install -g alfred-opener-for-asana`
 2. Alfred | Workflows | File Asana task | Configure workflow and
    variables icon | configure workspace name and access key.
-
-Go to the URL bar ("Chrome Omnibox"), and type 'a', a space, then
-search for an Asana task.  You should see them pop up as suggestions.
-Pick one, and your task will be opened in a new tab!
-
-<img src="./docs/screenshot-2.png" alt="screenshot showing chrome omnibar with the 'a' keyword being entered" height="400"/>
 
 ## Chrome Extension Configuration
 
