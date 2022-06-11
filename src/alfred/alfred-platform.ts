@@ -2,6 +2,7 @@ import AlfredCache from './alfred-cache.js';
 import AlfredConfig from './alfred-config.js';
 import AlfredLogger from './alfred-logger.js';
 import AlfredFormatter from './alfred-formatter.js';
+import AlfredBrowser from './alfred-browser.js';
 
 // needed to create virtual functions implementing an abstract class
 // for TypeScript
@@ -22,5 +23,9 @@ export default class AlfredPlatform {
 
   formatter() {
     return new AlfredFormatter();
+  }
+
+  browser() {
+    return new AlfredBrowser();
   }
 }
