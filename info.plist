@@ -98,7 +98,7 @@ set -eu
 				<key>queuemode</key>
 				<integer>2</integer>
 				<key>runningsubtext</key>
-				<string>Running Opener for Asana...</string>
+				<string>Searching...</string>
 				<key>script</key>
 				<string>query=$1
 
@@ -111,7 +111,7 @@ set -eu
 				<key>scriptfile</key>
 				<string></string>
 				<key>subtext</key>
-				<string>Enter text for Opener for Asana</string>
+				<string>Enter text to search for in Asana</string>
 				<key>title</key>
 				<string>Opener for Asana</string>
 				<key>type</key>
