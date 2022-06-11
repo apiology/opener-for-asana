@@ -2,6 +2,7 @@ import Cache from './cache.js';
 import Config from './config.js';
 import Logger from './logger.js';
 import Formatter from './formatter.js';
+import Browser from './browser.js';
 
 export abstract class Platform {
   abstract config(): Config;
@@ -11,6 +12,8 @@ export abstract class Platform {
   abstract logger(): Logger;
 
   abstract formatter(): Formatter;
+
+  abstract browser(): Browser;
 }
 
 let thePlatform: Platform | null = null;

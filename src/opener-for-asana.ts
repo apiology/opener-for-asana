@@ -39,8 +39,11 @@ export const actOnInputData = async (text: string) => {
     parsedText = decodeURIComponent(url.pathname);
   }
   console.log(`Acting upon ${parsedText}`);
-  // https://stackoverflow.com/questions/16503879/chrome-extension-how-to-open-a-link-in-new-tab
   const newURL = `https://app.asana.com/0/0/${parsedText}`;
-  chrome.tabs.create({ url: newURL });
-  return `Upvoted ${newURL}`;
+  const b = platform().browser();
+  b.openUrl(newURL);
+
+  // https://stackoverflow.com/questions/16503879/chrome-extension-how-to-open-a-link-in-new-tab
+  // chrome.tabs.create({ url: newURL });
+  return `Opened ${newURL}`;
 };
