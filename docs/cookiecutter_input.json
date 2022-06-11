@@ -9,7 +9,7 @@
     "multicli_keyword": "a",
     "open_source_license": "MIT license",
     "project_name": "Opener for Asana",
-    "project_short_description": "Searches for and opens an Asana task in the Chrome Omnibox",
+    "project_short_description": "Searches for and opens an Asana task in the Chrome Omnibox or as an Alfred workflow",
     "project_slug": "opener-for-asana",
     "type_of_github_repo": "public",
     "version": "0.1.0"

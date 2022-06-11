@@ -1,7 +1,7 @@
 /**
  * opener-for-asana module.
  *
- * Searches for and opens an Asana task in the Chrome Omnibox
+ * Searches for and opens an Asana task in the Chrome Omnibox or as an Alfred workflow
  */
 
 import { platform } from './platform.js';
