@@ -33,9 +33,14 @@ export const pullSuggestions = async (text: string): Promise<Suggestion[]> => {
 };
 
 export const actOnInputData = async (text: string) => {
-  console.log(`Acting upon ${text}`);
+  let parsedText = text;
+  if (text.startsWith('opener-for-asana:')) {
+    const url = new URL(text);
+    parsedText = decodeURIComponent(url.pathname);
+  }
+  console.log(`Acting upon ${parsedText}`);
   // https://stackoverflow.com/questions/16503879/chrome-extension-how-to-open-a-link-in-new-tab
-  const newURL = `https://app.asana.com/0/0/${text}`;
+  const newURL = `https://app.asana.com/0/0/${parsedText}`;
   chrome.tabs.create({ url: newURL });
   return `Upvoted ${newURL}`;
 };
