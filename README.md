@@ -6,13 +6,19 @@ Searches for and opens an Asana task in the Chrome Omnibox or as an Alfred workf
 
 [![Available in the Chrome Web Store](https://storage.googleapis.com/web-dev-uploads/image/WlD8wC6g8khYWPJUsQceQkhXSlv1/tbyBjqi7Zu733AAKA5n4.png)](https://chrome.google.com/webstore/detail/opener-for-asana/aaljndcedpekcigodagpkfmkafncfdfb)
 
-## Using
+## Using Chrome Extension
 
-Go to the URL bar ("Chrome Omnibox"), and type 'a', a space, then
+Go to the URL bar ("Chrome Omnibox"), then type 'a', a space, then
 search for an Asana task.  You should see them pop up as suggestions.
 Pick one, and your task will be opened in a new tab!
 
 <img src="./docs/screenshot-2.png" alt="screenshot showing chrome omnibar with the 'a' keyword being entered" height="400"/>
+
+## Using Alfred Workflow
+
+Similarly, activate Alfred, then type 'a', a space, then search for an
+Asana task.  You should see them pop up as suggestions.  Pick one, and
+your task will be opened in a new tab!
 
 ## Installing Chrome Extension
 
