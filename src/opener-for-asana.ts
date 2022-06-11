@@ -5,7 +5,6 @@
  */
 
 // import * as Asana from 'asana';
-import { spawn } from 'node:child_process';
 import { platform } from './platform.js';
 import { pullResult } from './asana-typeahead.js';
 
@@ -41,7 +40,8 @@ export const actOnInputData = async (text: string) => {
   }
   console.log(`Acting upon ${parsedText}`);
   const newURL = `https://app.asana.com/0/0/${parsedText}`;
-  spawn('open', [newURL]);
+  const b = platform().browser();
+  b.openUrl(newURL);
 
   // https://stackoverflow.com/questions/16503879/chrome-extension-how-to-open-a-link-in-new-tab
   // chrome.tabs.create({ url: newURL });
