@@ -28,7 +28,8 @@
     "email": "vince@broz.cc",
     "url": "https://github.com/apiology/"
   },
-  "license": "MIT license",
+
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/apiology/opener-for-asana/issues"
   },
