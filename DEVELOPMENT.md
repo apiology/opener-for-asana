@@ -50,12 +50,20 @@ development.  See the `.envrc` file for detail.
    stories = await client.stories.getStoriesForTask('1234);
    ```
 
-1. Update README.md with CWS icon linking to listing after the first paragraph - example: `[![Available in the Chrome Web Store](https://storage.googleapis.com/web-dev-uploads/image/WlD8wC6g8khYWPJUsQceQkhXSlv1/tbyBjqi7Zu733AAKA5n4.png)](WEBSTORE LINK HERE)`
+## Initial release of Alfred package to npm
 
-## Initial publish of Alfred package to npm
+Walk through these steps:
 
-1. Go through 'Publishing Alfred package to npm' below.
-2. Drop the following markdown into README.md in the 'Installing Alfred workflow' section.
+```sh
+git checkout main
+git pull
+git stash
+npm publish
+alfy-cleanup
+npm install -g alfred-opener-for-asana --upgrade
+```
+
+Drop the following markdown into README.md in the 'Installing Alfred workflow' section.
 
 ```markdown
 1. `npm install -g alfred-opener-for-asana`
@@ -63,7 +71,9 @@ development.  See the `.envrc` file for detail.
    variables icon | configure workspace name and access key.
 ```
 
-## Publishing Alfred package to npm
+Remove this section.
+
+## Releasing Alfred package to npm
 
 Related backlog tasks:
 
