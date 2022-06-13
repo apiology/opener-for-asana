@@ -62,7 +62,7 @@ export const omniboxInputEnteredListener = async (inputData: string) => {
     const out = await actOnInputData(urlText);
     logSuccess(out);
   } catch (err) {
-    alert(`Failed to process ${inputData}: ${err} `);
+    alert(`Failed to process ${inputData}: ${err}`);
     throw err;
   }
 };
