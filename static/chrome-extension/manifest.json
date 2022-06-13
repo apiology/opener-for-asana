@@ -1,7 +1,7 @@
 {
   "name": "Opener for Asana",
   "description": "Searches for and opens an Asana task in the Chrome Omnibox or as an Alfred workflow",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "icons": {
     "16": "apiology-16x16.png",
     "48": "apiology-48x48.png",
