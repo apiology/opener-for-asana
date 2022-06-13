@@ -23,6 +23,9 @@ const populateOmnibox = async (text: string, suggest: SuggestFunction) => {
   const suggestions = await pullOmniboxSuggestions(text);
 
   if (suggestions.length <= 0) {
+    chrome.omnibox.setDefaultSuggestion({
+      description: 'No results found',
+    });
     return;
   }
 
@@ -59,7 +62,7 @@ export const omniboxInputEnteredListener = async (inputData: string) => {
     const out = await actOnInputData(urlText);
     logSuccess(out);
   } catch (err) {
-    alert(`Failed to process ${inputData}: ${err}`);
+    alert(`Failed to process ${inputData}: ${err} `);
     throw err;
   }
 };
