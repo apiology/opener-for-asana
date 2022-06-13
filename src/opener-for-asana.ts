@@ -33,11 +33,8 @@ export const pullSuggestions = async (text: string): Promise<Suggestion[]> => {
 };
 
 export const actOnInputData = async (text: string) => {
-  let parsedText = text;
-  if (text.startsWith('opener-for-asana:')) {
-    const url = new URL(text);
-    parsedText = decodeURIComponent(url.pathname);
-  }
+  const url = new URL(text);
+  const parsedText = decodeURIComponent(url.pathname);
   console.log(`Acting upon ${parsedText}`);
   const newURL = `https://app.asana.com/0/0/${parsedText}`;
   const b = platform().browser();
