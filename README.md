@@ -26,9 +26,8 @@ your task will be opened in a new tab!
 
 ## Installing Alfred workflow
 
-1. `npm install -g alfred-opener-for-asana`
-2. Alfred | Workflows | File Asana task | Configure workflow and
-   variables icon | configure workspace name and access key.
+Download and double click the latest release's [.alfredworkflow
+file](https://github.com/apiology/opener-for-asana/releases).
 
 ## Chrome Extension Configuration
 
