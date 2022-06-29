@@ -157,12 +157,3 @@ open 'Opener for Asana.alfredworkflow'
 1. ... | Preview
 1. [Publish](https://developer.chrome.com/docs/webstore/update/)
 1. Update options.html link in README.md
-
-## Installing local version
-
-1. Run 'make' to create the bundle with webpack, or 'make start' to
-   start webpack in watch mode.
-2. Go to [chrome://extensions/](chrome://extensions/)
-3. Make sure 'Developer mode' is flipped on in the upper right.
-4. Click the 'Load unpacked' button.
-5. Choose the [dist](./dist) directory
