@@ -117,6 +117,11 @@ Then, install the newly published version via npm:
 npm install --location=global alfred-opener-for-asana --upgrade
 ```
 
+Verify the version installed matches what you just published:
+
+```sh
+npm list --location=global | grep alfred-opener-for-asana
+```
 Then, load Alfred | Preferences | Workflows |
 Opener for Asana | right click | Export ... | (type
 in version from CLI output) | Export | choose this directory | Export
@@ -129,9 +134,9 @@ new_release=$(npm version --json | jq -r '."alfred-opener-for-asana"')
 gh release create v${new_release:?} 'Opener for Asana.alfredworkflow'
 ```
 
-Remove your current installation again.
+Delete your current installation in Alfred again.
 
-open 'Opener for Asana.alfredworkflow'
+open 'Opener for Asana.alfredworkflow' | configure as prompted | Import
 
 [packal](http://www.packal.org/) | Login if needed | Dashboard | Opener for Asana | edit | Workflow File | Remove | Choose File | (.alfredworkflow file) | Upload | Version | (update) | (scroll to bottom) | Submit
 
