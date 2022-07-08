@@ -122,6 +122,7 @@ Verify the version installed matches what you just published:
 ```sh
 npm list --location=global | grep alfred-opener-for-asana
 ```
+
 Then, load Alfred | Preferences | Workflows |
 Opener for Asana | right click | Export ... | (type
 in version from CLI output) | Export | choose this directory | Export
