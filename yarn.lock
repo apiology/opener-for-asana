@@ -634,10 +634,10 @@
   dependencies:
     defer-to-connect "^2.0.1"
 
-"@types/asana@^0.18.5":
-  version "0.18.5"
-  resolved "https://registry.yarnpkg.com/@types/asana/-/asana-0.18.5.tgz#27b011042a2e4ead6d17f9913bc26b67a73956a1"
-  integrity sha512-z+oqx98trMPdEOkb4XPLiMBPRUmE1Y0tObeHIj7a8I/+BQMDuIrOFX5J5yyLlL9DtrDCJgtXyoKwVTJeaWP95g==
+"@types/asana@^0.18.7":
+  version "0.18.7"
+  resolved "https://registry.yarnpkg.com/@types/asana/-/asana-0.18.7.tgz#22d16cd7f5bcaa60f2d62ee7405817f1372b29a2"
+  integrity sha512-OhGx4BXExeGBHDIP/CjNx4UxJ4g+t2tMDVRG7LYxjDUZr+FYm2dKtbH4DK9qnkvE9Uu9Gs2YzAot+yh2DNR8+w==
   dependencies:
     "@types/bluebird" "*"
 
