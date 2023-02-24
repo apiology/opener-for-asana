@@ -15,5 +15,7 @@
     "version": "0.1.0",
     "asana_related": "yes",
     "asana_api": "yes",
-    "chrome_extension_options": "yes"
+    "options": "yes",
+    "content_script": "no",
+    "service_worker": "yes"
 }
