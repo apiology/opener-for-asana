@@ -56,3 +56,16 @@ requirements_dev.txt.installed
 /package.zip
 /alfred-opener-for-asana-*.tgz
 /Opener for Asana.alfredworkflow
+
+# Provided by user
+/config.js
+
+# from jest
+/coverage
+
+# from webpack
+/dist/chrome-extension
+/dist/alfred
+
+# from yarn
+/yarn-error.log
