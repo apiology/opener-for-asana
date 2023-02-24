@@ -4,7 +4,6 @@
  * Searches for and opens an Asana task in the Chrome Omnibox or as an Alfred workflow
  */
 
-// import * as Asana from 'asana';
 import { platform } from './platform.js';
 import { pullResult } from './asana-typeahead.js';
 
@@ -43,4 +42,13 @@ export const actOnInputData = async (text: string) => {
   // https://stackoverflow.com/questions/16503879/chrome-extension-how-to-open-a-link-in-new-tab
   // chrome.tabs.create({ url: newURL });
   return `Opened ${newURL}`;
+};
+
+export const doWork = (tab: chrome.tabs.Tab) => {
+  // No tabs or host permissions needed!
+  const logger = platform().logger();
+  logger.debug(`Turning ${tab.url} red!`);
+  chrome.tabs.executeScript({
+    code: 'document.body.style.backgroundColor="red"',
+  });
 };
