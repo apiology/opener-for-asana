@@ -4,7 +4,7 @@
  * Contains functions useful to connect to the Asana API
  */
 
-import * as Asana from 'asana';
+import Asana from 'asana';
 import { platform } from './platform.js';
 
 let fetchedClient: Asana.Client | null = null;
@@ -18,7 +18,7 @@ export const fetchClient = async () => {
 
   const clientOptions: Asana.ClientOptions = {
     defaultHeaders: {
-      'Asana-Enable': 'new_user_task_lists,new_project_templates',
+      'Asana-Enable': 'new_user_task_lists,new_project_templates,new_memberships',
     },
   };
   fetchedClient = Asana.Client.create(clientOptions).useAccessToken(asanaAccessToken);

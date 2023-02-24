@@ -55,9 +55,7 @@ development.  See the `.envrc` file for detail.
 Walk through these steps:
 
 ```sh
-git checkout main
-git pull
-git stash
+git stash && git checkout main && git pull
 npm publish
 alfy-cleanup
 npm install -g alfred-opener-for-asana --upgrade
@@ -96,9 +94,7 @@ Related backlog tasks:
 First, run these commands:
 
 ```sh
-git checkout main
-git pull
-git stash
+git stash && git checkout main && git pull
 last_released_version=$(npm version --json | jq -r '."alfred-opener-for-asana"')
 git log v${last_released_version:?}..
 update_type= # patch/minor/major
@@ -131,15 +127,16 @@ Once done, make a GitHub release with the exported file (do this in a
 new tab):
 
 ```sh
+cd ../opener-for-asana
 new_release=$(npm version --json | jq -r '."alfred-opener-for-asana"')
-gh release create v${new_release:?} 'Opener for Asana.alfredworkflow'
+gh release create --generate-notes v${new_release:?} 'Opener for Asana.alfredworkflow'
 ```
 
 Delete your current installation in Alfred again.
 
 open 'Opener for Asana.alfredworkflow' | configure as prompted | Import
 
-[packal](http://www.packal.org/) | Login if needed | Dashboard | Opener for Asana | edit | Workflow File | Remove | Choose File | (.alfredworkflow file) | Upload | Version | (update) | (scroll to bottom) | Submit
+[packal](http://www.packal.org/) | Login if needed | Dashboard | Opener for Asana | Edit current | Workflow File | Remove | Choose File | (.alfredworkflow file) | Upload | Version | (update) | (scroll to bottom) | Submit
 
 ## Initial release to packal.org
 
@@ -230,9 +227,10 @@ open 'Opener for Asana.alfredworkflow' | configure as prompted | Import
 1. Update screenshots in `docs/` for any new features
 1. Update [README.md](./README.md) with new screenshots
 1. PR screenshot updates in
-1. PR a bump to the version in `static/chrome-extension/manifest.json`
-1. `git checkout main && git pull`
-1. `make clean && make`
+1. `git stash && git checkout main && git pull`
+1. Bump the version in `static/chrome-extension/manifest.json` locally.
+1.`git commit -m "Bump version" static/chrome-extension/manifest.json`
+1. `git push && make clean && make`
 1. Update [package.zip](./package.zip) in [developer dashboard](https://chrome.google.com/u/1/webstore/devconsole/d34ba2e8-8b5a-4417-889e-4047c35522d0) as `apiology-cws` user.
 1. Upload any new screenshots
 1. Update description to match current README.md - manually translate
@@ -240,4 +238,3 @@ open 'Opener for Asana.alfredworkflow' | configure as prompted | Import
 1. Save draft
 1. ... | Preview
 1. [Publish](https://developer.chrome.com/docs/webstore/update/)
-1. Update options.html link in README.md
