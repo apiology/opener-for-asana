@@ -1,6 +1,6 @@
 {
   "name": "alfred-opener-for-asana",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Searches for and opens an Asana task in the Chrome Omnibox or as an Alfred workflow",
   "private": false,
   "scripts": {
