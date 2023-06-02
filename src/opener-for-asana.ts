@@ -6,6 +6,7 @@
 
 import { platform } from './platform.js';
 import { pullResult } from './asana-typeahead.js';
+import { fetchClient } from './asana-base.js';
 
 export const logSuccess = (result: string | object): void => {
   const logger = platform().logger();
@@ -31,16 +32,27 @@ export const pullSuggestions = async (text: string): Promise<Suggestion[]> => {
   });
 };
 
-export const actOnInputData = async (text: string) => {
-  const url = new URL(text);
+export const openTask = async (urlText: string) => {
+  const url = new URL(urlText);
   const parsedText = decodeURIComponent(url.pathname);
-  console.log(`Acting upon ${parsedText}`);
+  console.log(`Opening ${parsedText}`);
   const newURL = `https://app.asana.com/0/0/${parsedText}`;
   const b = platform().browser();
   b.openUrl(newURL);
 
   // https://stackoverflow.com/questions/16503879/chrome-extension-how-to-open-a-link-in-new-tab
   // chrome.tabs.create({ url: newURL });
+  return `Opened ${newURL}`;
+};
+
+export const toggleTaskStatus = async (urlText: string) => {
+  const url = new URL(urlText);
+  const parsedText = decodeURIComponent(url.pathname);
+  console.log(`Toggling ${parsedText}`);
+  const newURL = `https://app.asana.com/0/0/${parsedText}`;
+  const client = await fetchClient();
+  const task = await client.tasks.findById(parsedText);
+  await client.tasks.update(parsedText, { completed: !task.completed });
   return `Opened ${newURL}`;
 };
 

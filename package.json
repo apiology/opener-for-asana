@@ -71,7 +71,8 @@
     "process": "^0.11.10",
     "stream-browserify": "^3.0.0",
     "url": "^0.11.0",
-    "util": "^0.12.4"
+    "util": "^0.12.4",
+    "yargs": "^17.7.2"
   },
   "_asanaResolutionsComments": "asana requires request ^2.88.2 (which is deprecated and not receiving updates), which requires http-signature ~1.2.0, which requires jsprim ^1.2.2, which requires json-schema@0.2.3, which is perhaps vulnerable to CVE-2021-3918 (moderate).",
   "_minimatchResolutionsComments": "minimatch < 3.0.5 is vulnerable to CVE-2022-3517",

@@ -8,8 +8,31 @@
 	<string>Productivity</string>
 	<key>connections</key>
 	<dict>
+		<key>046E692B-9C79-4897-BD2E-94C2A206E7D7</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>91D325AE-50D5-44DE-A0F8-616FC7BD818D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>1D63159A-BF1D-4283-8C2B-12AA4A61F261</key>
 		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>046E692B-9C79-4897-BD2E-94C2A206E7D7</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>Toggle</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
 			<dict>
 				<key>destinationuid</key>
 				<string>A2F8BB0A-CE0E-462D-A47E-435A86FE3E1E</string>
@@ -45,6 +68,33 @@
 	<string>Opener for Asana</string>
 	<key>objects</key>
 	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>query=$1
+
+set -eu
+
+./node_modules/.bin/run-node dist/alfred/alfred/alfred-act.js --toggle "$query" cmd 2&gt;&amp;1</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>046E692B-9C79-4897-BD2E-94C2A206E7D7</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
@@ -152,28 +202,37 @@ set -eu
 	<string>See https://github.com/apiology/opener-for-asana/</string>
 	<key>uidata</key>
 	<dict>
+		<key>046E692B-9C79-4897-BD2E-94C2A206E7D7</key>
+		<dict>
+			<key>xpos</key>
+			<real>410</real>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
 		<key>1D63159A-BF1D-4283-8C2B-12AA4A61F261</key>
 		<dict>
 			<key>xpos</key>
-			<integer>165</integer>
+			<real>165</real>
 			<key>ypos</key>
-			<integer>240</integer>
+			<real>240</real>
 		</dict>
 		<key>91D325AE-50D5-44DE-A0F8-616FC7BD818D</key>
 		<dict>
 			<key>xpos</key>
-			<integer>615</integer>
+			<real>615</real>
 			<key>ypos</key>
-			<integer>240</integer>
+			<real>240</real>
 		</dict>
 		<key>A2F8BB0A-CE0E-462D-A47E-435A86FE3E1E</key>
 		<dict>
 			<key>xpos</key>
-			<integer>405</integer>
+			<real>405</real>
 			<key>ypos</key>
-			<integer>240</integer>
+			<real>240</real>
 		</dict>
 	</dict>
+	<key>userconfigurationconfig</key>
+	<array/>
 	<key>variables</key>
 	<dict>
 		<key>asana_access_key</key>
