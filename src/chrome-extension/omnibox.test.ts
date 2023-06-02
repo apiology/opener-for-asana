@@ -1,6 +1,6 @@
 import { omniboxInputEnteredListener } from './omnibox.js';
 import {
-  actOnInputData, logSuccess, pullSuggestions, Suggestion,
+  openTask, logSuccess, pullSuggestions, Suggestion,
 } from '../opener-for-asana.js';
 
 jest.mock('../opener-for-asana');
@@ -10,7 +10,7 @@ afterEach(() => {
 });
 
 test('omniboxInputEnteredListenerNonDefault', async () => {
-  const mockActOnInputData = jest.mocked(actOnInputData);
+  const mockActOnInputData = jest.mocked(openTask);
   const mockLogSuccess = jest.mocked(logSuccess);
   const resolvedValue = 'foo';
   mockActOnInputData.mockResolvedValue(resolvedValue);
@@ -21,7 +21,7 @@ test('omniboxInputEnteredListenerNonDefault', async () => {
 });
 
 test('omniboxInputEnteredListenerException', async () => {
-  const mockActOnInputData = jest.mocked(actOnInputData);
+  const mockActOnInputData = jest.mocked(openTask);
   const mockLogSuccess = jest.mocked(logSuccess);
   mockActOnInputData.mockRejectedValue('123');
 
@@ -31,7 +31,7 @@ test('omniboxInputEnteredListenerException', async () => {
 });
 
 test('omniboxInputEnteredListenerExceptionWithAlertAvailable', async () => {
-  const mockActOnInputData = jest.mocked(actOnInputData);
+  const mockActOnInputData = jest.mocked(openTask);
   const mockLogSuccess = jest.mocked(logSuccess);
   mockActOnInputData.mockRejectedValue('123');
 
@@ -41,7 +41,7 @@ test('omniboxInputEnteredListenerExceptionWithAlertAvailable', async () => {
 });
 
 test('omniboxInputEnteredListenerDefaultEmptyList', async () => {
-  const mockActOnInputData = jest.mocked(actOnInputData);
+  const mockActOnInputData = jest.mocked(openTask);
   const mockLogSuccess = jest.mocked(logSuccess);
   const mockPullSuggestions = jest.mocked(pullSuggestions);
   const resolvedValue = '';
@@ -54,7 +54,7 @@ test('omniboxInputEnteredListenerDefaultEmptyList', async () => {
 });
 
 test('omniboxInputEnteredListenerDefaultMultipleItems', async () => {
-  const mockActOnInputData = jest.mocked(actOnInputData);
+  const mockActOnInputData = jest.mocked(openTask);
   const mockLogSuccess = jest.mocked(logSuccess);
   const mockPullSuggestions = jest.mocked(pullSuggestions);
   const resolvedValue = '';

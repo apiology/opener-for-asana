@@ -27,6 +27,11 @@ export class ChromeExtensionFormatter {
     }
     const project = task.memberships[0]?.project;
 
+    let checkmark = '';
+    if (task.completed) {
+      checkmark = '✓ ';
+    }
+
     let membership = '';
 
     if (task.parent != null) {
@@ -42,7 +47,7 @@ export class ChromeExtensionFormatter {
     if (task.name == null) {
       throw new Error('Task name required to format!');
     }
-    return `${escapeHTML(task.name)}${membership}`;
+    return `${checkmark}${escapeHTML(task.name)}${membership}`;
   };
 
   escapeDescriptionPlainText = escapeHTML;

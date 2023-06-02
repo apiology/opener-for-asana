@@ -6,7 +6,7 @@
 
 import _ from 'lodash';
 import {
-  pullSuggestions, Suggestion, actOnInputData, logSuccess,
+  pullSuggestions, Suggestion, openTask, logSuccess,
 } from '../opener-for-asana.js';
 
 const pullOmniboxSuggestions = async (text: string) => {
@@ -52,6 +52,6 @@ export const omniboxInputEnteredListener = async (inputData: string) => {
     }
     urlText = suggestion.url;
   }
-  const out = await actOnInputData(urlText);
+  const out = await openTask(urlText);
   logSuccess(out);
 };

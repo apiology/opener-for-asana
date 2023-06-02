@@ -6,6 +6,11 @@ export class AlfredFormatter {
 
     const project = memberships[0]?.project;
 
+    let checkmark = '';
+    if (task.completed) {
+      checkmark = '✓ ';
+    }
+
     let membership = '';
 
     if (task.parent != null) {
@@ -21,7 +26,7 @@ export class AlfredFormatter {
     if (task.name == null) {
       throw new Error('Task name required to format!');
     }
-    return `${task.name}${membership}`;
+    return `${checkmark}${task.name}${membership}`;
   };
 
   escapeDescriptionPlainText = (text: string) => text;
