@@ -80,7 +80,7 @@
 
 set -eu
 
-./node_modules/.bin/run-node dist/alfred/alfred/alfred-act.js --toggle "$query" cmd 2&gt;&amp;1</string>
+./node_modules/.bin/run-node dist/alfred/alfred/alfred-act.js toggle "$query" 2&gt;&amp;1</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -107,7 +107,7 @@ set -eu
 
 set -eu
 
-./node_modules/.bin/run-node dist/alfred/alfred/alfred-act.js "$query" 2&gt;&amp;1</string>
+./node_modules/.bin/run-node dist/alfred/alfred/alfred-act.js open "$query" 2&gt;&amp;1</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
